@@ -1,0 +1,14 @@
+.form__set{
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+@media screen and (max-width:767px) {
+    .form__set{
+        flex-direction: column;
+    }
+}

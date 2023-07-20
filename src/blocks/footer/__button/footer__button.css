@@ -1,0 +1,24 @@
+.footer__button {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 60px;
+    height: 20px;
+    margin: 7px 0 7px 0;
+    border: none;
+    padding: 0;
+    color: #4A3C73;
+    transition: opacity 0.5s ease 0s; 
+}
+
+.footer__button:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+@media screen and (max-width:767px) {
+    .footer__button{
+        margin: 41px 0 0 0;
+    }
+}

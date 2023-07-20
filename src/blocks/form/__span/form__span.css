@@ -1,0 +1,10 @@
+.form__span{ 
+    color: red;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 130%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: calc(48px + 6px);
+}

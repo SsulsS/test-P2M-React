@@ -1,0 +1,27 @@
+.back-button {
+    height: 34px;
+    max-width: 69px;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding: 0;
+    margin: 78px 0 0 0;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease 0s;
+    color: #744CED;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.back-button:hover {
+    opacity: 0.8;
+}
+
+@media screen and (max-width:767px){
+    .back-button{
+        margin: 45px 0 0 16px;
+    }
+}
