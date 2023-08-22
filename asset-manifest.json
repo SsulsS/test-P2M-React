@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/test-P2M-React/static/css/main.e4651224.css",
+    "main.js": "/test-P2M-React/static/js/main.bd89930c.js",
+    "static/media/prew.png": "/test-P2M-React/static/media/prew.b33278114c222d36ee59.png",
+    "static/media/usaflag.svg": "/test-P2M-React/static/media/usaflag.ba13258cf063517229eaaa43be8efbe9.svg",
+    "static/media/hident.svg": "/test-P2M-React/static/media/hident.17cd0ff300b6429cd261.svg",
+    "static/media/hide.svg": "/test-P2M-React/static/media/hide.973d28673fe3cb9985f5.svg",
+    "static/media/PAY2ME.svg": "/test-P2M-React/static/media/PAY2ME.fc4c4094e969c50c3d5ceb8a05b1fb3a.svg",
+    "static/media/chat.svg": "/test-P2M-React/static/media/chat.dc7333e58848895bce32b7d1687daf49.svg",
+    "static/media/Flag.svg": "/test-P2M-React/static/media/Flag.a913d8d0c51944df4377a890031bd975.svg",
+    "index.html": "/test-P2M-React/index.html",
+    "static/media/arrow-left.svg": "/test-P2M-React/static/media/arrow-left.d6eba204f6fd1ec07a82e0f59f68fcdd.svg",
+    "static/media/arrow-right.svg": "/test-P2M-React/static/media/arrow-right.cf8e8c04b0a901f71da2a6e537fc481b.svg",
+    "static/media/Krest.svg": "/test-P2M-React/static/media/Krest.4d6c7093b0089192137d.svg",
+    "main.e4651224.css.map": "/test-P2M-React/static/css/main.e4651224.css.map",
+    "main.bd89930c.js.map": "/test-P2M-React/static/js/main.bd89930c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e4651224.css",
+    "static/js/main.bd89930c.js"
+  ]
+}
