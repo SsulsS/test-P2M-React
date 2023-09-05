@@ -7,11 +7,53 @@ import UsernameForm from "./UsernameForm";
 import PasswordForm from "./PasswordForm"
 import ErrorForm from "./ErrorForm"
 import Chat from "./Chat";
+import profiles from "../utils/profiles"
 
 function Main(props){
+    const [login, setLogin] =React.useState("");
+    const [password, setPassword] =React.useState("");
+    const [activeButton, setActiveButton] = React.useState(false);
+    const [passwordActiveButton, setPasswordActiveButton] = React.useState(false);
+    const [verify, setVerify] = React.useState(false);
+
+    function checkVerify() {
+        for (let i = 0; i < profiles.length; i++) {
+            if (login == profiles[i].login && password == profiles[i].password) {
+                setVerify(true);
+            }
+        }
+    }
+
+    function handleLoginChange(evt) {
+        setLogin(evt.target.value)
+        if (login.length >= 1){
+            setActiveButton(true)
+        }   else {
+            setActiveButton(false)
+        } 
+        console.log(login);
+    }
+
+    function handlePasswordChange(evt) {
+        setPassword(evt.target.value)
+        if (password.length >= 1){
+            setPasswordActiveButton(true)
+        } else {
+            setPasswordActiveButton(false)
+        }     
+    }
+
     function handleSubmit(evt) {
         evt.preventDefault();
     }
+
+    function handlePassworFormClick() {
+        checkVerify()
+        if (!verify) {
+            props.setIsPasswordFormOpen(false);
+            props.setIsErrorFormOpen(true) 
+        }
+      }
 
     return (
         <>
@@ -21,7 +63,7 @@ function Main(props){
             <img src={prew} alt="фото" className="decor__image"/>
         </div>
 
-        <button className="back-button">
+        <button className="back-button" onClick={props.onClick}>
             <img src={arrowLeft} alt="Стрелка" className="back-button__image"/>
             Назад
         </button>
@@ -32,21 +74,34 @@ function Main(props){
             isOpen={props.isUsernameFormOpen}
             onClick={props.handleUsernameFormClick}
             onSubmit={handleSubmit}
+            onChange={handleLoginChange}
+            login={login}
+            activeButton={activeButton}
         />
         <PasswordForm
             logo={logo}
             arrowRight={arrowRight}
             isOpen={props.isPasswordFormOpen}
-            isPasswordFormOpen={props.handlePasswordButtonClick}
-            onClick={props.handlePassworFormClick}
+            isPasswordFormOpen={props.handleOpenPasswordButtonClick}
+            onClick={handlePassworFormClick}
+            onChange={handlePasswordChange}
             onSubmit={handleSubmit}
             showPassword={props.isFormPasswordOpen}
+            password={password}
+            passwordActiveButton={passwordActiveButton}
         />
         <ErrorForm
             logo={logo}
             arrowRight={arrowRight}
             isOpen={props.isErrorFormOpen}
             onSubmit={handleSubmit}
+            onClick={props.handleOpenPasswordErrorForm}
+            showPassword={props.isErrorFormPasswordOpen}
+            login={login}
+            loginOnChange={handleLoginChange}
+            password={password}
+            passwordOnChange={handlePasswordChange}
+
         />
         
 

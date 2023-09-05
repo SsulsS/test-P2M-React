@@ -11,8 +11,30 @@ function App() {
   const [isErrorFormPasswordOpen, setIsErrorFormPasswordOpen] = React.useState(false)
   const [isFormPasswordOpen, setIsFormPasswordOpen] = React.useState(false)
 
-  function handlePasswordButtonClick() {
-    setIsFormPasswordOpen(true)
+  function handleBackButtonClick() {
+    if (isErrorFormOpen){
+      setIsPasswordFormOpen(true)
+      setIsErrorFormOpen(false)
+    } else if (isPasswordFormOpen) {
+      setIsUsernameFormOpen(true)
+      setIsPasswordFormOpen(false)
+    }
+  }
+
+  function handleOpenPasswordErrorForm() {
+    if (!isErrorFormPasswordOpen){
+      setIsErrorFormPasswordOpen(true)
+    } else{
+      setIsErrorFormPasswordOpen(false)
+    }
+  }
+
+  function handleOpenPasswordButtonClick() {
+    if (!isFormPasswordOpen){
+      setIsFormPasswordOpen(true)
+    } else{
+      setIsFormPasswordOpen(false)
+    }
   }
 
   function handleUsernameFormClick() {
@@ -20,10 +42,10 @@ function App() {
     setIsPasswordFormOpen(true)
   }
 
-  function handlePassworFormClick() {
+  /*function handlePassworFormClick() {
     setIsPasswordFormOpen(false);
     setIsErrorFormOpen(true)
-  }
+  }*/
 
   function handlePopupClick () {
     setIsPopupOpen(true)
@@ -36,15 +58,21 @@ function App() {
   return (
     <>
     <Main
+    onClick={handleBackButtonClick}
+
     isUsernameFormOpen={isUsernameFormOpen}
     handleUsernameFormClick={handleUsernameFormClick}
 
     isPasswordFormOpen={isPasswordFormOpen}
-    handlePassworFormClick={handlePassworFormClick}
-    handlePasswordButtonClick={handlePasswordButtonClick}
+    setIsPasswordFormOpen={setIsPasswordFormOpen}
+    //handlePassworFormClick={handlePassworFormClick}
+    handleOpenPasswordButtonClick={handleOpenPasswordButtonClick}
     isFormPasswordOpen={isFormPasswordOpen}
 
     isErrorFormOpen={isErrorFormOpen}
+    setIsErrorFormOpen={setIsErrorFormOpen}
+    isErrorFormPasswordOpen={isErrorFormPasswordOpen}
+    handleOpenPasswordErrorForm={handleOpenPasswordErrorForm}
     />
     <Footer
       onFooter = {handlePopupClick}
